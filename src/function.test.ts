@@ -7,7 +7,7 @@ Deno.test({
   name: "function",
   fn: () => {
     const value: unknown = () => {};
-    const { t, v } = type(value);
+    const [t, v] = type(value);
     assertFunctionType(t);
     assertFunction(v);
     assertEquals(true, isFunction(v));
@@ -18,6 +18,6 @@ Deno.test({
 Deno.test({
   name: "not function",
   fn: () => {
-    assertThrows(() => assertFunction({}))
-  }
-})
+    assertThrows(() => assertFunction({}));
+  },
+});

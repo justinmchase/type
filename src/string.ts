@@ -1,7 +1,7 @@
 import { Type, type } from "./type.ts";
 
 export function isString(value: unknown): value is string {
-  return type(value).t === Type.String;
+  return type(value)[0] === Type.String;
 }
 
 export function assertStringType(type: Type): asserts type is Type.String {
@@ -11,12 +11,12 @@ export function assertStringType(type: Type): asserts type is Type.String {
 }
 
 export function assertString(value: unknown): asserts value is string {
-  const { t } = type(value);
+  const [t] = type(value);
   assertStringType(t);
 }
 
 export function toString(value: unknown) {
-  const { t, v } = type(value);
+  const [t, v] = type(value);
   switch (t) {
     case Type.Array:
       return v.toString();

@@ -1,7 +1,7 @@
 import { Type, type } from "./type.ts";
 
 export function isUndefined(value: unknown): value is undefined {
-  return type(value).t === Type.Undefined;
+  return type(value)[0] === Type.Undefined;
 }
 
 export function assertUndefinedType(
@@ -13,6 +13,6 @@ export function assertUndefinedType(
 }
 
 export function assertUndefined(value: unknown): asserts value is undefined {
-  const { t } = type(value);
+  const [t] = type(value);
   assertUndefinedType(t);
 }

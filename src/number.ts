@@ -1,7 +1,7 @@
 import { Type, type } from "./type.ts";
 
 export function isNumber(value: unknown): value is number {
-  return type(value).t === Type.Number;
+  return type(value)[0] === Type.Number;
 }
 
 export function assertNumberType(type: Type): asserts type is Type.Number {
@@ -11,6 +11,6 @@ export function assertNumberType(type: Type): asserts type is Type.Number {
 }
 
 export function assertNumber(value: unknown): asserts value is number {
-  const { t } = type(value);
+  const [t] = type(value);
   assertNumberType(t);
 }

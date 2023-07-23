@@ -7,7 +7,7 @@ Deno.test({
   name: "object",
   fn: () => {
     const value: unknown = {};
-    const { t, v } = type(value);
+    const [t, v] = type(value);
     assertObjectType(t);
     assertObject(v);
     assertEquals(true, isObject(v));
@@ -18,6 +18,6 @@ Deno.test({
 Deno.test({
   name: "not object",
   fn: () => {
-    assertThrows(() => assertObject([]))
-  }
-})
+    assertThrows(() => assertObject([]));
+  },
+});

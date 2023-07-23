@@ -7,7 +7,7 @@ Deno.test({
   name: "symbol",
   fn: () => {
     const value: unknown = Symbol();
-    const { t, v } = type(value);
+    const [t, v] = type(value);
     assertSymbolType(t);
     assertSymbol(v);
     assertEquals(true, isSymbol(v));
@@ -18,6 +18,6 @@ Deno.test({
 Deno.test({
   name: "not symbol",
   fn: () => {
-    assertThrows(() => assertSymbol({}))
-  }
-})
+    assertThrows(() => assertSymbol({}));
+  },
+});

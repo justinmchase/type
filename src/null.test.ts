@@ -7,7 +7,7 @@ Deno.test({
   name: "null",
   fn: () => {
     const value: unknown = null;
-    const { t, v } = type(value);
+    const [t, v] = type(value);
     assertNullType(t);
     assertNull(v);
     assertEquals(true, isNull(v));
@@ -18,6 +18,6 @@ Deno.test({
 Deno.test({
   name: "not null",
   fn: () => {
-    assertThrows(() => assertNull({}))
-  }
-})
+    assertThrows(() => assertNull({}));
+  },
+});

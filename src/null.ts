@@ -1,7 +1,7 @@
 import { Type, type } from "./type.ts";
 
 export function isNull(value: unknown): value is null {
-  return type(value).t === Type.Null;
+  return type(value)[0] === Type.Null;
 }
 
 export function assertNullType(type: Type): asserts type is Type.Null {
@@ -11,6 +11,6 @@ export function assertNullType(type: Type): asserts type is Type.Null {
 }
 
 export function assertNull(value: unknown): asserts value is null {
-  const { t } = type(value);
+  const [t] = type(value);
   assertNullType(t);
 }

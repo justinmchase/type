@@ -1,7 +1,7 @@
 import { Type, type } from "./type.ts";
 
 export function isObject(value: unknown): value is Record<string, unknown> {
-  return type(value).t === Type.Object;
+  return type(value)[0] === Type.Object;
 }
 
 export function assertObjectType(type: Type): asserts type is Type.Object {
@@ -13,6 +13,6 @@ export function assertObjectType(type: Type): asserts type is Type.Object {
 export function assertObject(
   value: unknown,
 ): asserts value is Record<string, unknown> {
-  const { t } = type(value);
+  const [t] = type(value);
   assertObjectType(t);
 }

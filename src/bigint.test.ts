@@ -7,7 +7,7 @@ Deno.test({
   name: "bigint",
   fn: () => {
     const value: unknown = BigInt(100);
-    const { t, v } = type(value);
+    const [t, v] = type(value);
     assertBigIntType(t);
     assertBigInt(v);
     assertEquals(true, isBigInt(v));
@@ -18,6 +18,6 @@ Deno.test({
 Deno.test({
   name: "not bigint",
   fn: () => {
-    assertThrows(() => assertBigInt({}))
-  }
-})
+    assertThrows(() => assertBigInt({}));
+  },
+});

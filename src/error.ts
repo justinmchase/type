@@ -1,7 +1,7 @@
 import { Type, type } from "./type.ts";
 
 export function isError(value: unknown): value is Error {
-  return type(value).t === Type.Error;
+  return type(value)[0] === Type.Error;
 }
 
 export function assertErrorType(type: Type): asserts type is Type.Error {
@@ -11,6 +11,6 @@ export function assertErrorType(type: Type): asserts type is Type.Error {
 }
 
 export function assertError(value: unknown): asserts value is Error {
-  const { t } = type(value);
+  const [t] = type(value);
   assertErrorType(t);
 }

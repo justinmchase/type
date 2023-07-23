@@ -1,7 +1,7 @@
 import { Type, type } from "./type.ts";
 
 export function isBigInt(value: unknown): value is bigint {
-  return type(value).t === Type.BigInt;
+  return type(value)[0] === Type.BigInt;
 }
 
 export function assertBigIntType(type: Type): asserts type is Type.BigInt {
@@ -11,6 +11,6 @@ export function assertBigIntType(type: Type): asserts type is Type.BigInt {
 }
 
 export function assertBigInt(value: unknown): asserts value is bigint {
-  const { t } = type(value);
+  const [t] = type(value);
   assertBigIntType(t);
 }

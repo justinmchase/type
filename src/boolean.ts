@@ -1,7 +1,7 @@
 import { Type, type } from "./type.ts";
 
 export function isBoolean(value: unknown): value is boolean {
-  return type(value).t === Type.Boolean;
+  return type(value)[0] === Type.Boolean;
 }
 
 export function assertBooleanType(type: Type): asserts type is Type.Boolean {
@@ -11,6 +11,6 @@ export function assertBooleanType(type: Type): asserts type is Type.Boolean {
 }
 
 export function assertBoolean(value: unknown): asserts value is boolean {
-  const { t } = type(value);
+  const [t] = type(value);
   assertBooleanType(t);
 }

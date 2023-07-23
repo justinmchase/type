@@ -1,7 +1,7 @@
 import { Type, type } from "./type.ts";
 
 export function isArray(value: unknown): value is unknown[] {
-  return type(value).t === Type.Array;
+  return type(value)[0] === Type.Array;
 }
 
 export function assertArrayType(type: Type): asserts type is Type.Array {
@@ -11,6 +11,6 @@ export function assertArrayType(type: Type): asserts type is Type.Array {
 }
 
 export function assertArray(value: unknown): asserts value is unknown[] {
-  const { t } = type(value);
+  const [t] = type(value);
   assertArrayType(t);
 }

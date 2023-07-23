@@ -1,16 +1,16 @@
 export type ResolvedType =
-  | { t: Type.Null; v: null }
-  | { t: Type.Undefined; v: undefined }
-  | { t: Type.BigInt; v: bigint }
-  | { t: Type.Boolean; v: boolean }
+  | [Type.Null, null]
+  | [Type.Undefined, undefined]
+  | [Type.BigInt, bigint]
+  | [Type.Boolean, boolean]
   // deno-lint-ignore ban-types
-  | { t: Type.Function; v: Function }
-  | { t: Type.Number; v: number }
-  | { t: Type.String; v: string }
-  | { t: Type.Symbol; v: symbol }
-  | { t: Type.Array; v: unknown[] }
-  | { t: Type.Error; v: Error }
-  | { t: Type.Object; v: Record<string, unknown> };
+  | [Type.Function, Function]
+  | [Type.Number, number]
+  | [Type.String, string]
+  | [Type.Symbol, symbol]
+  | [Type.Array, unknown[]]
+  | [Type.Error, Error]
+  | [Type.Object, Record<string, unknown>];
 
 export enum Type {
   Null = "null",
@@ -29,25 +29,25 @@ export enum Type {
 export function type(value: unknown): ResolvedType {
   switch (typeof value) {
     case "bigint":
-      return { t: Type.BigInt, v: value as bigint };
+      return [Type.BigInt, value as bigint];
     case "boolean":
-      return { t: Type.Boolean, v: value as boolean };
+      return [Type.Boolean, value as boolean];
     case "function":
       // deno-lint-ignore ban-types
-      return { t: Type.Function, v: value as Function };
+      return [Type.Function, value as Function];
     case "number":
-      return { t: Type.Number, v: value as number };
+      return [Type.Number, value as number];
     case "string":
-      return { t: Type.String, v: value as string };
+      return [Type.String, value as string];
     case "symbol":
-      return { t: Type.Symbol, v: value as symbol };
+      return [Type.Symbol, value as symbol];
     case "undefined":
-      return { t: Type.Undefined, v: undefined };
+      return [Type.Undefined, undefined];
     case "object": {
-      if (value === null) return { t: Type.Null, v: null };
-      if (Array.isArray(value)) return { t: Type.Array, v: value as unknown[] };
-      if (value instanceof Error) return { t: Type.Error, v: value as Error };
-      return { t: Type.Object, v: value as Record<string, unknown> };
+      if (value === null) return [Type.Null, null];
+      if (Array.isArray(value)) return [Type.Array, value as unknown[]];
+      if (value instanceof Error) return [Type.Error, value as Error];
+      return [Type.Object, value as Record<string, unknown>];
     }
   }
 }

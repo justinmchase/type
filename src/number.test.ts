@@ -7,7 +7,7 @@ Deno.test({
   name: "number",
   fn: () => {
     const value: unknown = 0.0;
-    const { t, v } = type(value);
+    const [t, v] = type(value);
     assertNumberType(t);
     assertNumber(v);
     assertEquals(true, isNumber(v));
@@ -18,6 +18,6 @@ Deno.test({
 Deno.test({
   name: "not number",
   fn: () => {
-    assertThrows(() => assertNumber({}))
-  }
-})
+    assertThrows(() => assertNumber({}));
+  },
+});

@@ -29,7 +29,7 @@ Deno.test({
   name: "resolution",
   fn: async (ctx) => {
     for (const [value, expected] of resolveTests) {
-      const { t, v } = type(value);
+      const [t, v] = type(value);
       await ctx.step({
         name: `[${toString(v)}]: ${expected}`,
         fn: () => {

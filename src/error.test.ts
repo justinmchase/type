@@ -7,7 +7,7 @@ Deno.test({
   name: "error",
   fn: () => {
     const value: unknown = new Error("test");
-    const { t, v } = type(value);
+    const [t, v] = type(value);
     assertErrorType(t);
     assertError(v);
     assertEquals(true, isError(v));
@@ -18,6 +18,6 @@ Deno.test({
 Deno.test({
   name: "not error",
   fn: () => {
-    assertThrows(() => assertError({}))
-  }
-})
+    assertThrows(() => assertError({}));
+  },
+});

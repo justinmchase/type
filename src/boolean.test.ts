@@ -7,7 +7,7 @@ Deno.test({
   name: "boolean",
   fn: () => {
     const value: unknown = true;
-    const { t, v } = type(value);
+    const [t, v] = type(value);
     assertBooleanType(t);
     assertBoolean(v);
     assertEquals(true, isBoolean(v));
@@ -18,6 +18,6 @@ Deno.test({
 Deno.test({
   name: "not boolean",
   fn: () => {
-    assertThrows(() => assertBoolean({}))
-  }
-})
+    assertThrows(() => assertBoolean({}));
+  },
+});

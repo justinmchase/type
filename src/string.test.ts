@@ -7,7 +7,7 @@ Deno.test({
   name: "string",
   fn: () => {
     const value: unknown = "";
-    const { t, v } = type(value);
+    const [t, v] = type(value);
     assertStringType(t);
     assertString(v);
     assertEquals(true, isString(v));
@@ -18,6 +18,6 @@ Deno.test({
 Deno.test({
   name: "not string",
   fn: () => {
-    assertThrows(() => assertString({}))
-  }
-})
+    assertThrows(() => assertString({}));
+  },
+});
