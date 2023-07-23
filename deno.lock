@@ -1,0 +1,48 @@
+{
+  "version": "2",
+  "remote": {
+    "https://deno.land/std@0.195.0/_util/diff.ts": "1a3c044aedf77647d6cac86b798c6417603361b66b54c53331b312caeb447aea",
+    "https://deno.land/std@0.195.0/assert/_constants.ts": "8a9da298c26750b28b326b297316cdde860bc237533b07e1337c021379e6b2a9",
+    "https://deno.land/std@0.195.0/assert/_format.ts": "a69126e8a469009adf4cf2a50af889aca364c349797e63174884a52ff75cf4c7",
+    "https://deno.land/std@0.195.0/assert/assert_equals.ts": "a0ee60574e437bcab2dcb79af9d48dc88845f8fd559468d9c21b15fd638ef943",
+    "https://deno.land/std@0.195.0/assert/assert_is_error.ts": "b4eae4e5d182272efc172bf28e2e30b86bb1650cd88aea059e5d2586d4160fb9",
+    "https://deno.land/std@0.195.0/assert/assert_throws.ts": "63784e951475cb7bdfd59878cd25a0931e18f6dc32a6077c454b2cd94f4f4bcd",
+    "https://deno.land/std@0.195.0/assert/assertion_error.ts": "4d0bde9b374dfbcbe8ac23f54f567b77024fb67dbb1906a852d67fe050d42f56",
+    "https://deno.land/std@0.195.0/assert/equal.ts": "9f1a46d5993966d2596c44e5858eec821859b45f783a5ee2f7a695dfc12d8ece",
+    "https://deno.land/std@0.195.0/fmt/colors.ts": "a7eecffdf3d1d54db890723b303847b6e0a1ab4b528ba6958b8f2e754cf1b3bc",
+    "https://dev.jspm.io/lcov-total": "ea252be6aea538140ce660c3b9bb5ea0ee636087cb9bf3599c425f80f10dd2df",
+    "https://dev.jspm.io/npm:@jspm/core@2.0.1/_/0545670c.js": "468e254a0e5f7801333f217fcee046141186bd0a960018c893d73910bd754b71",
+    "https://dev.jspm.io/npm:@jspm/core@2.0.1/_/3fe460d2.js": "991599d7a4ccc93f3dc0808aa706e713fd80a80fc8d21ec1fd28a96832030572",
+    "https://dev.jspm.io/npm:@jspm/core@2.0.1/_/57403c48.js": "3fa9c20fb03311a58a652563a4c935f6e7666113d2f725a6458893bfbac75e5f",
+    "https://dev.jspm.io/npm:@jspm/core@2.0.1/_/633ae550.js": "65a4b416c1a22251ee020c55496de44a08ae247d4108898dfc0f4753df829fc5",
+    "https://dev.jspm.io/npm:@jspm/core@2.0.1/_/8dc3f476.js": "55ff556fbd358ec01e78b1bc31d4d22baf1479046e42ea17f712b58ea96ba535",
+    "https://dev.jspm.io/npm:@jspm/core@2.0.1/_/8ddf35de.js": "c05f3a1431f18571f87b59b7d3cda65c8983712c9b424b5574623975dcc68863",
+    "https://dev.jspm.io/npm:@jspm/core@2.0.1/_/a17f45f2.js": "a36e172b43861a826c2258b8735525a1b13eb59c198ee808b016586d02dab38f",
+    "https://dev.jspm.io/npm:@jspm/core@2.0.1/_/a421dfba.js": "ec016925d8e0ec5e5b56c0847212c1113edce320f5f6920d241ee00ee115d172",
+    "https://dev.jspm.io/npm:@jspm/core@2.0.1/_/c5b352d6.js": "991006a876c2c17414e1884022c7c96a5cbe9a4fc9ec1abd717ac3d0ee7d4c55",
+    "https://dev.jspm.io/npm:@jspm/core@2.0.1/_/cb95b980.js": "e20e42c770070c4326cb18192218b59e90a5378cdc57897f0c5f3b99ae054f07",
+    "https://dev.jspm.io/npm:@jspm/core@2.0.1/_/e0803811.js": "1f6fe590fd0eeb59d9911633c388a4d97bea171f10ad260bc63b6702eb6d2e25",
+    "https://dev.jspm.io/npm:@jspm/core@2.0.1/nodelibs/assert": "d10535eedc33c732428f71cd82f4a0caf0e74fec90d6bd7c3535a8ea4389a5ce",
+    "https://dev.jspm.io/npm:@jspm/core@2.0.1/nodelibs/buffer": "f6bd0a893f7d7d48422389dc81a2923809fbd24c2d6352c7f4bdd29dcad7154b",
+    "https://dev.jspm.io/npm:@jspm/core@2.0.1/nodelibs/events": "e5cc37092fddd5ac75814ca2a779eda7977ef43b0b410d90c8f9323f89d80cb4",
+    "https://dev.jspm.io/npm:@jspm/core@2.0.1/nodelibs/fs": "721ba251d28f561ab8b04b57938cba82b702b821bdf027b0f0c00bd7f94d3cdd",
+    "https://dev.jspm.io/npm:@jspm/core@2.0.1/nodelibs/path": "3eefa6fbe73189ade0710d6dc4c725be27f0496cb5371d59c0a16b84be17e0cb",
+    "https://dev.jspm.io/npm:@jspm/core@2.0.1/nodelibs/stream": "bbc5a30284349f7be148a0a9e81fbdf30d52abaf9b155554abce757bdffac50a",
+    "https://dev.jspm.io/npm:@jspm/core@2.0.1/nodelibs/url": "3d7ca846b3826a38b6b6596e04446f053bcadb71b818a28333e620afd119fef7",
+    "https://dev.jspm.io/npm:@jspm/core@2.0.1/nodelibs/util": "f22fa23c828774618e6f8705ce6705f5a4e1d939efc98af445805d6d9a9e4a44",
+    "https://dev.jspm.io/npm:@jspm/core@2/nodelibs/fs": "9281dd30f0fbcfc282a5c235d54ed502166d109171380db7a609480e10e9627b",
+    "https://dev.jspm.io/npm:lcov-total@1.0.7!cjs": "d2d0fac08f179304ea5c19070a741ee3791a7f4c17c6c70f8dc1ef7eebfdb784"
+  },
+  "npm": {
+    "specifiers": {
+      "lcov-total": "lcov-total@2.1.1",
+      "lcov-total@2.1.1": "lcov-total@2.1.1"
+    },
+    "packages": {
+      "lcov-total@2.1.1": {
+        "integrity": "sha512-PHk0K1N4TVAZErw4uxeinmJnJn3OL7k4C1QK+Cjua4pLKZ8hMiB1ABc2p7NgpNMXo37P97F2UobMkt1//aS72Q==",
+        "dependencies": {}
+      }
+    }
+  }
+}
