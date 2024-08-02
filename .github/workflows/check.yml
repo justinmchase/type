@@ -27,4 +27,6 @@ jobs:
 
       - name: Coverage Report
         run: deno coverage cov_profile >> $GITHUB_STEP_SUMMARY
-    
+
+      - name: Publish Check
+        run: deno publish --check
