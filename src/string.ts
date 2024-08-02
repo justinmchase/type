@@ -15,7 +15,7 @@ export function assertString(value: unknown): asserts value is string {
   assertStringType(t);
 }
 
-export function toString(value: unknown) {
+export function toString(value: unknown): string {
   const [t, v] = type(value);
   switch (t) {
     case Type.Array:

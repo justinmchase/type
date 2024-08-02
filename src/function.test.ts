@@ -1,5 +1,4 @@
-import { assertThrows } from "std/assert/assert_throws.ts";
-import { assertEquals } from "std/assert/assert_equals.ts";
+import { assertEquals, assertThrows } from "@std/assert";
 import { assertFunction, assertFunctionType, isFunction } from "./function.ts";
 import { type } from "./type.ts";
 

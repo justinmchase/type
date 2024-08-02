@@ -1,5 +1,30 @@
 {
-  "version": "2",
+  "version": "3",
+  "packages": {
+    "specifiers": {
+      "jsr:@std/assert@^1.0.1": "jsr:@std/assert@1.0.1",
+      "jsr:@std/internal@^1.0.1": "jsr:@std/internal@1.0.1",
+      "npm:lcov-total": "npm:lcov-total@2.1.1",
+      "npm:lcov-total@2.1.1": "npm:lcov-total@2.1.1"
+    },
+    "jsr": {
+      "@std/assert@1.0.1": {
+        "integrity": "13590ef8e5854f59e4ad252fd987e83239a1bf1f16cb9c69c1d123ebb807a75b",
+        "dependencies": [
+          "jsr:@std/internal@^1.0.1"
+        ]
+      },
+      "@std/internal@1.0.1": {
+        "integrity": "6f8c7544d06a11dd256c8d6ba54b11ed870aac6c5aeafff499892662c57673e6"
+      }
+    },
+    "npm": {
+      "lcov-total@2.1.1": {
+        "integrity": "sha512-PHk0K1N4TVAZErw4uxeinmJnJn3OL7k4C1QK+Cjua4pLKZ8hMiB1ABc2p7NgpNMXo37P97F2UobMkt1//aS72Q==",
+        "dependencies": {}
+      }
+    }
+  },
   "remote": {
     "https://deno.land/std@0.195.0/_util/diff.ts": "1a3c044aedf77647d6cac86b798c6417603361b66b54c53331b312caeb447aea",
     "https://deno.land/std@0.195.0/assert/_constants.ts": "8a9da298c26750b28b326b297316cdde860bc237533b07e1337c021379e6b2a9",
@@ -33,16 +58,9 @@
     "https://dev.jspm.io/npm:@jspm/core@2/nodelibs/fs": "9281dd30f0fbcfc282a5c235d54ed502166d109171380db7a609480e10e9627b",
     "https://dev.jspm.io/npm:lcov-total@1.0.7!cjs": "d2d0fac08f179304ea5c19070a741ee3791a7f4c17c6c70f8dc1ef7eebfdb784"
   },
-  "npm": {
-    "specifiers": {
-      "lcov-total": "lcov-total@2.1.1",
-      "lcov-total@2.1.1": "lcov-total@2.1.1"
-    },
-    "packages": {
-      "lcov-total@2.1.1": {
-        "integrity": "sha512-PHk0K1N4TVAZErw4uxeinmJnJn3OL7k4C1QK+Cjua4pLKZ8hMiB1ABc2p7NgpNMXo37P97F2UobMkt1//aS72Q==",
-        "dependencies": {}
-      }
-    }
+  "workspace": {
+    "dependencies": [
+      "jsr:@std/assert@^1.0.1"
+    ]
   }
 }

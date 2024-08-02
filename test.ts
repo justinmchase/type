@@ -1,4 +1,4 @@
-import { assertEquals } from "std/assert/assert_equals.ts";
+import { assertEquals } from "@std/assert";
 import { toString, Type, type } from "./mod.ts";
 
 const resolveTests: [unknown, Type][] = [
