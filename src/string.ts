@@ -69,15 +69,21 @@ export function toString(value: unknown): string {
       return v.toString();
     case Type.Boolean:
       return `${v}`;
+    case Type.Date:
+      return v.toString();
     case Type.Error:
       return v.toString();
     case Type.Function:
+      return v.toString();
+    case Type.Map:
       return v.toString();
     case Type.Null:
       return "null";
     case Type.Number:
       return `${v}`;
     case Type.Object:
+      return v.toString();
+    case Type.Set:
       return v.toString();
     case Type.String:
       return v;

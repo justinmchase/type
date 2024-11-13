@@ -17,7 +17,10 @@ export type ResolvedType =
   | [Type.Symbol, symbol]
   | [Type.Array, unknown[]]
   | [Type.Error, Error]
-  | [Type.Object, Record<string, unknown>];
+  | [Type.Object, Record<string, unknown>]
+  | [Type.Map, Map<unknown, unknown>]
+  | [Type.Set, Set<unknown>]
+  | [Type.Date, Date];
 
 /**
  * The Type enum represents all the possible primitive types.
@@ -67,6 +70,18 @@ export enum Type {
    * Represents the object type.
    */
   Object = "object",
+  /**
+   * Represents the Map type.
+   */
+  Map = "map",
+  /**
+   * Represents the Set type.
+   */
+  Set = "set",
+  /**
+   * Represents the Date type.
+   */
+  Date = "date",
 }
 
 /**
@@ -86,6 +101,9 @@ export enum Type {
  * type([]); // [Type.Array, []]
  * type(new Error("error")); // [Type.Error, Error: error]
  * type({}); // [Type.Object, {}]
+ * type(new Map()); // [Type.Map, Map {}]
+ * type(new Set()); // [Type.Set, Set {}]
+ * type(new Date()); // [Type.Date, Date {}]
  * ```
  * @category Type
  */
@@ -109,7 +127,50 @@ export function type(value: unknown): ResolvedType {
       if (value === null) return [Type.Null, null];
       if (Array.isArray(value)) return [Type.Array, value as unknown[]];
       if (value instanceof Error) return [Type.Error, value as Error];
+      if (value instanceof Map) {
+        return [Type.Map, value as Map<unknown, unknown>];
+      }
+      if (value instanceof Set) return [Type.Set, value as Set<unknown>];
+      if (value instanceof Date) return [Type.Date, value as Date];
       return [Type.Object, value as Record<string, unknown>];
     }
+  }
+}
+
+/**
+ * Returns true if the type is a reference type.
+ * @param value The value to check.
+ * @returns {boolean} Returns true if the type is a reference type.
+ * @example
+ * ```ts
+ * isReference({}); // true
+ * isReference([]); // true
+ * isReference(new Error()); // true
+ * isReference(() => {}); // true
+ * isReference(new Map()); // true
+ * isReference(new Set()); // true
+ * isReference(new Date()); // true
+ * isReference(null); // false
+ * isReference(undefined); // false
+ * isReference(1); // false
+ * isReference(true); // false
+ * isReference("hello"); // false
+ * isReference(Symbol()); // false
+ * isReference(1n); // false
+ * ```
+ * @category Guards
+ */
+export function isReference(t: Type): boolean {
+  switch (t) {
+    case Type.Object:
+    case Type.Array:
+    case Type.Error:
+    case Type.Function:
+    case Type.Map:
+    case Type.Set:
+    case Type.Date:
+      return true;
+    default:
+      return false;
   }
 }

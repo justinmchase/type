@@ -23,6 +23,9 @@ const resolveTests: [unknown, Type][] = [
       return "{}";
     },
   }, Type.Object],
+  [new Map(), Type.Map],
+  [new Set(), Type.Set],
+  [new Date(), Type.Date],
 ];
 
 Deno.test({
